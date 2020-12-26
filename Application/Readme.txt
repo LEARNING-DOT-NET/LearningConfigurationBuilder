@@ -1,4 +1,33 @@
-﻿Create a new JSON configuration file for your console application and name it appsettings.json:
+﻿
+	App.Config
+	Web.Config
+
+	XML
+
+		AppSettings:
+
+			Flat Based!
+
+	string ageString =
+		System.Configuration.ConfigurationManager.Settings["Age"];
+
+	int age = 0;
+
+	if(string.IsNullOrEmpty(ageString) = false)
+	{
+		try
+		{
+			age =
+				System.Convert.ToInt32(ageString);
+		}
+		catch
+		{
+		}
+	}
+
+-----------------------------------------------------------------------------------------
+
+Create a new JSON configuration file for your console application and name it appsettings.json:
 
 Add New Item -> Visual C# Items -> Web -> Markup -> JSON File -> appsettings.json
 

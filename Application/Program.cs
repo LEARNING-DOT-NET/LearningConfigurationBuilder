@@ -16,7 +16,7 @@ namespace Application
 			var configurationBuilder =
 				new Microsoft.Extensions.Configuration.ConfigurationBuilder()
 					.SetBasePath(System.IO.Directory.GetCurrentDirectory())
-					.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+					.AddJsonFile(path: "appsettings.json", optional: true, reloadOnChange: true)
 					//.AddEnvironmentVariables()
 					.Build();
 
