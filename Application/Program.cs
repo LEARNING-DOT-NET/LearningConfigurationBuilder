@@ -20,22 +20,22 @@ namespace Application
 					//.AddEnvironmentVariables()
 					.Build();
 
-			Settings.ApplicationSettings
-				applicationSettings = new Settings.ApplicationSettings();
+			Settings.Main
+				main = new Settings.Main();
 
 			configurationBuilder
 				.GetSection(key: "Settings")
-				.Bind(applicationSettings);
+				.Bind(main);
 
-			System.Console.WriteLine($"Age: { applicationSettings.Age }");
-			System.Console.WriteLine($"Salary: { applicationSettings.Salary }$");
-			System.Console.WriteLine($"Teacher: { applicationSettings.IsTeacher }");
-			System.Console.WriteLine($"Full Name: { applicationSettings.FullName }");
+			System.Console.WriteLine($"Age: { main.Age }");
+			System.Console.WriteLine($"Salary: { main.Salary }$");
+			System.Console.WriteLine($"Teacher: { main.IsTeacher }");
+			System.Console.WriteLine($"Full Name: { main.FullName }");
 
 			System.Console.WriteLine();
 			System.Console.WriteLine($"Courses:");
 
-			foreach (var item in applicationSettings.Courses)
+			foreach (var item in main.Courses)
 			{
 				System.Console.Write($" { item }");
 			}
@@ -43,8 +43,8 @@ namespace Application
 			System.Console.WriteLine();
 			System.Console.WriteLine();
 			System.Console.WriteLine($"Company:");
-			System.Console.WriteLine($" Name: { applicationSettings.Company.Name }");
-			System.Console.WriteLine($" Employee Count: { applicationSettings.Company.EmployeeCount }");
+			System.Console.WriteLine($" Name: { main.Company.Name }");
+			System.Console.WriteLine($" Employee Count: { main.Company.EmployeeCount }");
 
 			System.Console.WriteLine();
 			System.Console.WriteLine();

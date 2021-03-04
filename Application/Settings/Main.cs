@@ -1,8 +1,8 @@
 ﻿namespace Application.Settings
 {
-	public class ApplicationSettings : object
+	public class Main : object
 	{
-		public ApplicationSettings() : base()
+		public Main() : base()
 		{
 		}
 
