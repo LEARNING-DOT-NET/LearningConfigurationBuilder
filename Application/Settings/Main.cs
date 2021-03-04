@@ -2,6 +2,8 @@
 {
 	public class Main : object
 	{
+		public const string KeyName = "Settings";
+
 		public Main() : base()
 		{
 		}

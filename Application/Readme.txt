@@ -6,6 +6,10 @@
 
 		AppSettings:
 
+			<appsettings>
+				<add key="Age" value="20" />
+			</appsettings>
+
 			Flat Based!
 
 	string ageString =

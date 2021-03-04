@@ -10,12 +10,43 @@ namespace Application
 
 		public static void Main()
 		{
+			// **************************************************
+			var configurationBuilderTraditional =
+				new Microsoft.Extensions.Configuration.ConfigurationBuilder()
+					.SetBasePath(basePath: System.IO.Directory.GetCurrentDirectory())
+					.AddJsonFile(path: "appsettings.json", optional: true, reloadOnChange: true)
+					//.AddEnvironmentVariables()
+					.Build();
+
+			string employeeCountString =
+				configurationBuilderTraditional
+				.GetSection(key: "Settings")
+				.GetSection(key: "Company")
+				.GetSection(key: "EmployeeCount")
+				.Value
+				;
+
+			int employeeCount = 0;
+
+			if (string.IsNullOrEmpty(employeeCountString) == false)
+			{
+				try
+				{
+					employeeCount =
+						System.Convert.ToInt32(employeeCountString);
+				}
+				catch
+				{
+				}
+			}
+			// **************************************************
+
 			// SetBasePath & AddJsonFile & Bind needs:
 			// using Microsoft.Extensions.Configuration;
 
 			var configurationBuilder =
 				new Microsoft.Extensions.Configuration.ConfigurationBuilder()
-					.SetBasePath(System.IO.Directory.GetCurrentDirectory())
+					.SetBasePath(basePath: System.IO.Directory.GetCurrentDirectory())
 					.AddJsonFile(path: "appsettings.json", optional: true, reloadOnChange: true)
 					//.AddEnvironmentVariables()
 					.Build();
@@ -23,8 +54,12 @@ namespace Application
 			Settings.Main
 				main = new Settings.Main();
 
+			//configurationBuilder
+			//	.GetSection(key: "Settings")
+			//	.Bind(main);
+
 			configurationBuilder
-				.GetSection(key: "Settings")
+				.GetSection(key: Settings.Main.KeyName)
 				.Bind(main);
 
 			System.Console.WriteLine($"Age: { main.Age }");
