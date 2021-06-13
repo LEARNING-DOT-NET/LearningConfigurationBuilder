@@ -42,10 +42,13 @@ Change the “Copy to Output Directory” option to “Copy if newer”.
 
 Install Below Packages:
 
-Install-Package Microsoft.Extensions.Configuration
-Install-Package Microsoft.Extensions.Configuration.Json
 Install-Package Microsoft.Extensions.Configuration.Binder
+
+Install-Package Microsoft.Extensions.Configuration.Json
+	Install-Package Microsoft.Extensions.Configuration
+
 Install-Package Microsoft.Extensions.Configuration.FileExtensions
+	Install-Package Microsoft.Extensions.Configuration
 
 Optional:
 

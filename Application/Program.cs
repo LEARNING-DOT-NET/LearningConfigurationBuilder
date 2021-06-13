@@ -51,8 +51,7 @@ namespace Application
 					//.AddEnvironmentVariables()
 					.Build();
 
-			Settings.Main
-				main = new Settings.Main();
+			var main = new Settings.Main();
 
 			//configurationBuilder
 			//	.GetSection(key: "Settings")
